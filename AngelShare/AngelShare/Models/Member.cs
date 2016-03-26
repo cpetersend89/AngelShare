@@ -32,8 +32,6 @@ namespace AngelShare.Models
         [Required]
         public string Password { get; set; }
         [Required]
-        public string Country { get; set; }
-        [Required]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
         public virtual Survey Survey { get; set; }
