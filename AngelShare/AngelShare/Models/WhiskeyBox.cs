@@ -7,13 +7,13 @@ using System.Web;
 
 namespace AngelShare.Models
 {
-    [Table("WhiskeyBoxes")]
+    [Table("WhiskeyBox")]
     public class WhiskeyBox
     {
         [Key]
         public int BoxId { get; set; }
+        [ForeignKey("Member")]
         public int MemberId { get; set; }
         public virtual Whiskey Whiskey { get; set; }
-        public virtual Member Member { get; set; }
     }
 }

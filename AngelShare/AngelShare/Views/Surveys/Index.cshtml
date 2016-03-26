@@ -1,0 +1,143 @@
+﻿@model AngelShare.Models.Survey
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Survey</h2>
+@using (Html.BeginForm("Index", "Surveys", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <table>
+        <tr>
+            <td>
+                <h4>How do you like your coffee?</h4>
+            </td>
+            <td>
+                @{
+                    var coffeeQuestion = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Strong and black", Value = "1"},
+                        new SelectListItem {Text = "Mild but nothing in it", Value = "2"},
+                        new SelectListItem {Text = "With cream and sugar", Value = "3"},
+                        new SelectListItem {Text = "I do not drink coffee", Value = "4"}
+                    };
+
+                    @Html.DropDownListFor(model => model.CoffeeQuestionResponse, coffeeQuestion)
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>What kind of nose do you prefer?</h4>
+            </td>
+            <td>
+                @{
+                    var noseQuestion = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Sandalwood", Value = "1"},
+                        new SelectListItem {Text = "Clove", Value = "2"},
+                        new SelectListItem {Text = "Smoke", Value = "3"},
+                        new SelectListItem {Text = "Citrus", Value = "4"}
+                    };
+
+                    @Html.DropDownListFor(model => model.NoseQuestionResponse, noseQuestion)
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>What is your favorite whiskey drink?</h4>
+            </td>
+
+            <td>
+                @{
+                    var whiskeyDrinkQuestion = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Vieux Carre", Value = "1"},
+                        new SelectListItem {Text = "Manhattan", Value = "2"},
+                        new SelectListItem {Text = "Boulevardier", Value = "3"},
+                        new SelectListItem {Text = "Old Fashion", Value = "4"},
+                        new SelectListItem {Text = "Whiskey Neat", Value = "5"}
+                    };
+
+                    @Html.DropDownListFor(model => model.WhiskeyDrinkResponse, whiskeyDrinkQuestion)
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Pick the type of whiskey that excites you the most</h4>
+            </td>
+
+            <td>
+                @{
+                    var typeOfWhiskeyQuestion = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "American (Bourbon, Tennessee, Rye)", Value = "1"},
+                        new SelectListItem {Text = "World (Indian, Japanese)", Value = "2"},
+                        new SelectListItem {Text = "Scoth", Value = "3"},
+                        new SelectListItem {Text = "Irish", Value = "4"},
+                    };
+
+                    @Html.DropDownListFor(model => model.TypeOfWhiskyResponse, typeOfWhiskeyQuestion)
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Do you prefer an average, medium, or high ABV?</h4>
+            </td>
+            <td>
+                @{
+                    var abvQuestion = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Average (40%)", Value = "1"},
+                        new SelectListItem {Text = "Medium (45%)", Value = "2"},
+                        new SelectListItem {Text = "High (50% +)", Value = "3"},
+                    };
+
+                    @Html.DropDownListFor(model => model.AbvPreferenceResponse, abvQuestion)
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>How adventurous are you when trying new spirits?</h4>
+            </td>
+
+            <td>
+                @{
+                    var newSpiritsQuestion = new List<SelectListItem>()
+                    {
+                        new SelectListItem {Text = "Very", Value = "1"},
+                        new SelectListItem {Text = "Kind of", Value = "2"},
+                        new SelectListItem {Text = "Not at all", Value = "3"},
+                    };
+
+                    @Html.DropDownListFor(model => model.NewSpiritsResponse, newSpiritsQuestion)
+                }
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" class="btn btn-default" value="Submit"/>
+            </td>
+        </tr>
+    </table>
+}
+
+
+<p>
+    
+    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+</p>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AngelShare.Models.Membership>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MembershipName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MembershipDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MembershipPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MembershipName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MembershipDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MembershipPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MembershipId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MembershipId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MembershipId })
+        </td>
+    </tr>
+}
+
+</table>

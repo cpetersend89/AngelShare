@@ -1,45 +1,47 @@
-﻿<!DOCTYPE html>
+﻿@using AngelShare.Models
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
-    <div class="navbar navbar-inverse" role="navigation">
-        <h1 id="header" class="navbar-text h1">ASP.NET Project</h1>
-    </div>
-
-    <div id="main" class="row panel">
-        <div class="col-xs-2 well">
-            <ul>
-                <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Home", "Index", "Home")</li>
-                @*<li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Shop", "Index", "Shop")</li>
-                <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Cart", "Index", "Cart")</li>
-                <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Login", "Index", "Login")</li>*@
-                <li class="btn btn-block btn-default btn-lg">@Html.ActionLink("Register", "Index", "Registrations")</li>
-                @*<li class="btn btn-block btn-default btn-lg">@Html.ActionLink("View Customers", "Index", "Customers")</li>*@
-            </ul>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Angel Share", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Memberships", "Index", "Memberships")</li>
+                    <li>@Html.ActionLink("Survey", "Index", "Surveys")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>
-
-        <div class="col-xs-9">
-            @RenderBody()
-            <hr />
-        </div>
-
     </div>
-    <div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Angel Share</p>
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

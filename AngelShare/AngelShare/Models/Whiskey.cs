@@ -7,7 +7,7 @@ using System.Web;
 
 namespace AngelShare.Models
 {
-    [Table("Whiskeys")]
+    [Table("Whiskey")]
     public class Whiskey
     {
         [Key]
