@@ -25,13 +25,24 @@ namespace AngelShare.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "CoffeeQuestionResponse,NoseQuestionResponse,WhiskeyDrinkResponse,TypeOfWhiskyResponse,AbvPreferenceResponse,NewSpiritsResponse")] Survey survey)
+        public ActionResult Index(Survey survey)
         {
+            string userId = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
-                db.Surveys.Add(survey);
+                Survey Survey = new Survey()
+                {
+                    UserId = userId,
+                    CoffeeQuestionResponse = survey.CoffeeQuestionResponse,
+                    NoseQuestionResponse = survey.NoseQuestionResponse,
+                    WhiskeyDrinkResponse = survey.WhiskeyDrinkResponse,
+                    TypeOfWhiskyResponse = survey.TypeOfWhiskyResponse,
+                    AbvPreferenceResponse = survey.AbvPreferenceResponse,
+                    NewSpiritsResponse = survey.NoseQuestionResponse
+                };
+                db.Surveys.Add(Survey);
                 db.SaveChanges();
-                return RedirectToAction("Register", "Account");
+                return RedirectToAction("Index", "Home");
             }
             return View(survey);
         }
