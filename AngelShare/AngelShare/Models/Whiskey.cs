@@ -7,15 +7,15 @@ using System.Web;
 
 namespace AngelShare.Models
 {
-    [Table("Whiskey")]
+  
     public class Whiskey
-    {
-        [Key]
+    {  
         public int WhiskeyId { get; set; }
         public string Type { get; set; }
         public string ProductName { get; set; }
         public string Description { get; set; }
-        public decimal Price { get; set; }
-        public string Image { get; set; }
+        public decimal Proof { get; set; }
+        public int Age { get; set; }
+        public decimal Cost { get; set; }
     }
 }

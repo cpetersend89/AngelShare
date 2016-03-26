@@ -212,7 +212,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bourbon.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Irish.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\MemberInfo.cs" />
@@ -220,9 +222,13 @@
     <Compile Include="Identity\MyCtx.cs" />
     <Compile Include="Identity\MyUser.cs" />
     <Compile Include="Models\MyDbContext.cs" />
+    <Compile Include="Models\Rye.cs" />
+    <Compile Include="Models\Scotch.cs" />
     <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\Tennessee.cs" />
     <Compile Include="Models\Whiskey.cs" />
     <Compile Include="Models\WhiskeyBox.cs" />
+    <Compile Include="Models\World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
