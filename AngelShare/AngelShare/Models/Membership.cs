@@ -10,8 +10,7 @@ namespace AngelShare.Models
    
     public class Membership
     {
-        [Key]
-        public int MembershipId { get; set; }
+        public int Id { get; set; }
         [Display(Name = "Membership")]
         public string MembershipName { get; set; }
         [Display(Name = "Description")]

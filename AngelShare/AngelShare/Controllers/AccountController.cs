@@ -161,8 +161,7 @@ namespace AngelShare.Controllers
                     City = model.City,
                     State = model.State,
                     PostalCode = model.PostalCode,
-                    PhoneNumber = model.PhoneNumber,
-                    Survey = model.Survey
+                    PhoneNumber = model.PhoneNumber,                
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);

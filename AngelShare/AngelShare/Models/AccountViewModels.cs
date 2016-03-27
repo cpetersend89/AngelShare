@@ -100,7 +100,6 @@ namespace AngelShare.Models
         [DataType(DataType.PhoneNumber)]
         [DisplayFormat(DataFormatString = "{0:###-###-####}", ApplyFormatInEditMode = true)]
         public string PhoneNumber { get; set; }
-        public virtual Survey Survey { get; set; }
     }
 
     public class ChooseMembershipLevelViewModel

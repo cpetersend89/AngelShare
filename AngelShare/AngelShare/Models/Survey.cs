@@ -8,12 +8,10 @@ using System.Web;
 
 namespace AngelShare.Models
 {
-    [Table("Surveys")]
+  
     public class Survey
-    {
-        [Key]
-        public int SurveyId { get; set; }
-        public string UserId { get; set; }
+    {    
+    
         public string CoffeeQuestionResponse { get; set; }
         public string NoseQuestionResponse { get; set; }
         public string WhiskeyDrinkResponse { get; set; }

@@ -10,5 +10,10 @@ namespace AngelShare.Models
     public class Member : IdentityUser
     {
         public virtual MemberInfo MemberInfo { get; set; }
+
+     
+        public WhiskeyBox WhiskeyBox { get; set; }
+        public Membership Membership { get; set; }
+
     }
 }

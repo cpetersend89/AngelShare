@@ -10,107 +10,107 @@ using AngelShare.Models;
 
 namespace AngelShare.Controllers
 {
-    public class MembershipsController : Controller
+    public class WhiskeysController : Controller
     {
         private MyDbContext db = new MyDbContext();
 
-        // GET: Memberships
+        // GET: Whiskeys
         public ActionResult Index()
         {
-            return View(db.Memberships.ToList());
+            return View(db.Whiskeys.ToList());
         }
 
-        // GET: Memberships/Details/5
+        // GET: Whiskeys/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Membership membership = db.Memberships.Find(id);
-            if (membership == null)
+            Whiskey whiskey = db.Whiskeys.Find(id);
+            if (whiskey == null)
             {
                 return HttpNotFound();
             }
-            return View(membership);
+            return View(whiskey);
         }
 
-        // GET: Memberships/Create
+        // GET: Whiskeys/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Memberships/Create
+        // POST: Whiskeys/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,MembershipName,MembershipDescription,MembershipPrice")] Membership membership)
+        public ActionResult Create([Bind(Include = "Id,Type,ProductName,Description,Proof,Age,Cost")] Whiskey whiskey)
         {
             if (ModelState.IsValid)
             {
-                db.Memberships.Add(membership);
+                db.Whiskeys.Add(whiskey);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(membership);
+            return View(whiskey);
         }
 
-        // GET: Memberships/Edit/5
+        // GET: Whiskeys/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Membership membership = db.Memberships.Find(id);
-            if (membership == null)
+            Whiskey whiskey = db.Whiskeys.Find(id);
+            if (whiskey == null)
             {
                 return HttpNotFound();
             }
-            return View(membership);
+            return View(whiskey);
         }
 
-        // POST: Memberships/Edit/5
+        // POST: Whiskeys/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,MembershipName,MembershipDescription,MembershipPrice")] Membership membership)
+        public ActionResult Edit([Bind(Include = "Id,Type,ProductName,Description,Proof,Age,Cost")] Whiskey whiskey)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(membership).State = EntityState.Modified;
+                db.Entry(whiskey).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(membership);
+            return View(whiskey);
         }
 
-        // GET: Memberships/Delete/5
+        // GET: Whiskeys/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Membership membership = db.Memberships.Find(id);
-            if (membership == null)
+            Whiskey whiskey = db.Whiskeys.Find(id);
+            if (whiskey == null)
             {
                 return HttpNotFound();
             }
-            return View(membership);
+            return View(whiskey);
         }
 
-        // POST: Memberships/Delete/5
+        // POST: Whiskeys/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Membership membership = db.Memberships.Find(id);
-            db.Memberships.Remove(membership);
+            Whiskey whiskey = db.Whiskeys.Find(id);
+            db.Whiskeys.Remove(whiskey);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

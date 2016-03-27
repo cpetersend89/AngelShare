@@ -7,14 +7,10 @@ using System.Web;
 
 namespace AngelShare.Models
 {
-   
+
     public class WhiskeyBox
     {
-        public WhiskeyBox()
-        {
-            Whiskeys = new List<Whiskey>();
-        }   
-        public int BoxId { get; set; }
-        public virtual List<Whiskey> Whiskeys { get; set; }
+        public int Id { get; set; }
+        public List<Whiskey> Whiskeys { get; set; }
     }
 }

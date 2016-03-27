@@ -9,13 +9,15 @@ namespace AngelShare.Models
 {
   
     public class Whiskey
-    {  
-        public int WhiskeyId { get; set; }
+    {
+        public int Id { get; set; }
         public string Type { get; set; }
         public string ProductName { get; set; }
         public string Description { get; set; }
         public decimal Proof { get; set; }
         public int Age { get; set; }
         public decimal Cost { get; set; }
+
+        public virtual WhiskeyBox WhiskeyBox { get; set; }
     }
 }
