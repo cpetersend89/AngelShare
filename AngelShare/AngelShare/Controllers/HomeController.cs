@@ -10,7 +10,7 @@ namespace AngelShare.Controllers
 {
     public class HomeController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        MyDbContext db = new MyDbContext();
         public ActionResult Index()
         {
             return View();

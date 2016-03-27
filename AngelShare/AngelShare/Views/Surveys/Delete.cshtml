@@ -1,0 +1,80 @@
+﻿@model AngelShare.Models.Survey
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Survey</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoffeeQuestionResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoffeeQuestionResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoseQuestionResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoseQuestionResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhiskeyDrinkResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhiskeyDrinkResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeOfWhiskyResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeOfWhiskyResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbvPreferenceResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbvPreferenceResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewSpiritsResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewSpiritsResponse)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

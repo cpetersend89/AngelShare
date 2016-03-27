@@ -18,9 +18,6 @@ namespace AngelShare.Models
         public DbSet<WhiskeyBox> WhiskeyBoxes { get; set; }
         public DbSet<Whiskey> Whiskeys { get; set; }     
         public DbSet<Membership> Memberships { get; set; }
-        public static MyDbContext Create()
-        {
-            return new MyDbContext();
-        }
+        public DbSet<Survey> Surveys { get; set; }
     }
 }

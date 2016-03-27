@@ -1,0 +1,74 @@
+﻿@model AngelShare.Models.Survey
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Survey</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoffeeQuestionResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoffeeQuestionResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoseQuestionResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoseQuestionResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhiskeyDrinkResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhiskeyDrinkResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeOfWhiskyResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeOfWhiskyResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbvPreferenceResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbvPreferenceResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewSpiritsResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewSpiritsResponse)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SurveyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
