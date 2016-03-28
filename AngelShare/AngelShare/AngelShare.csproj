@@ -205,6 +205,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603280410122_initial.cs" />
+    <Compile Include="Migrations\201603280410122_initial.Designer.cs">
+      <DependentUpon>201603280410122_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -215,7 +219,8 @@
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Models\Repository\Repository.cs" />
     <Compile Include="Models\Repository\WhiskeyRepository.cs" />
-    <Compile Include="Models\SeedData.cs" />
+    <Compile Include="Models\SeedDB\SeedData.cs" />
+    <Compile Include="Models\SeedDB\SeedUser.cs" />
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\Whiskey.cs" />
     <Compile Include="Models\WhiskeyBox.cs" />
@@ -314,6 +319,11 @@
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201603280410122_initial.resx">
+      <DependentUpon>201603280410122_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
