@@ -10,7 +10,7 @@ namespace AngelShare.Models
   
     public class Whiskey
     {
-        public int Id { get; set; }
+        public int WhiskeyID { get; set; }
         public string Type { get; set; }
         public string ProductName { get; set; }
         public string Description { get; set; }
@@ -18,6 +18,6 @@ namespace AngelShare.Models
         public int Age { get; set; }
         public decimal Cost { get; set; }
 
-        public virtual WhiskeyBox WhiskeyBox { get; set; }
+        public virtual List<WhiskeyBox> WhiskeyBox { get; set; }
     }
 }

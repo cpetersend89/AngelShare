@@ -46,7 +46,7 @@ namespace AngelShare.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,MembershipName,MembershipDescription,MembershipPrice")] Membership membership)
+        public ActionResult Create([Bind(Include = "WhiskeyID,MembershipName,MembershipDescription,MembershipPrice")] Membership membership)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace AngelShare.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,MembershipName,MembershipDescription,MembershipPrice")] Membership membership)
+        public ActionResult Edit([Bind(Include = "WhiskeyID,MembershipName,MembershipDescription,MembershipPrice")] Membership membership)
         {
             if (ModelState.IsValid)
             {

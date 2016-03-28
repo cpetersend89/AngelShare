@@ -209,6 +209,10 @@
     <Compile Include="Migrations\201603261658346_Initial.Designer.cs">
       <DependentUpon>201603261658346_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603272224001_WhiskeyBox.cs" />
+    <Compile Include="Migrations\201603272224001_WhiskeyBox.Designer.cs">
+      <DependentUpon>201603272224001_WhiskeyBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -217,6 +221,9 @@
     <Compile Include="Models\MemberInfo.cs" />
     <Compile Include="Models\Membership.cs" />
     <Compile Include="Models\MyDbContext.cs" />
+    <Compile Include="Models\Repository\Repository.cs" />
+    <Compile Include="Models\Repository\WhiskeyRepository.cs" />
+    <Compile Include="Models\SeedData.cs" />
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\Whiskey.cs" />
     <Compile Include="Models\WhiskeyBox.cs" />
@@ -289,11 +296,6 @@
     <Content Include="Views\Memberships\Details.cshtml" />
     <Content Include="Views\Memberships\Edit.cshtml" />
     <Content Include="Views\Memberships\Index.cshtml" />
-    <Content Include="Views\Whiskeys\Create.cshtml" />
-    <Content Include="Views\Whiskeys\Delete.cshtml" />
-    <Content Include="Views\Whiskeys\Details.cshtml" />
-    <Content Include="Views\Whiskeys\Edit.cshtml" />
-    <Content Include="Views\Whiskeys\Index.cshtml" />
     <Content Include="Views\WhiskeyBoxes\Create.cshtml" />
     <Content Include="Views\WhiskeyBoxes\Delete.cshtml" />
     <Content Include="Views\WhiskeyBoxes\Details.cshtml" />
@@ -304,6 +306,9 @@
     <Content Include="Views\Surveys\Details.cshtml" />
     <Content Include="Views\Surveys\Edit.cshtml" />
     <Content Include="Views\Surveys\Index.cshtml" />
+    <Content Include="Views\Whiskeys\Create.cshtml" />
+    <Content Include="Views\Whiskeys\Index.cshtml" />
+    <Content Include="Views\Whiskeys\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,13 +317,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201603261658346_Initial.resx">
       <DependentUpon>201603261658346_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603272224001_WhiskeyBox.resx">
+      <DependentUpon>201603272224001_WhiskeyBox.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
