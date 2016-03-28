@@ -12,6 +12,26 @@ namespace AngelShare.Models
     {
         protected override void Seed(MyDbContext context)
         {
+            Membership silver = new Membership()
+            {
+                MembershipName = "Silver",
+                MembershipPrice = 49.99m
+            };
+            context.Memberships.Add(silver);
+            Membership gold = new Membership()
+            {
+                MembershipName = "Gold",
+                MembershipPrice = 99.99m
+            };
+            context.Memberships.Add(gold);
+            Membership platinum = new Membership()
+            {
+                MembershipName = "Platinum",
+                MembershipPrice = 199.99m
+            };
+            context.Memberships.Add(platinum);
+
+
             Whiskey jack = new Whiskey()
             {
                 Age = 4,
@@ -37,7 +57,7 @@ namespace AngelShare.Models
                 Age = 12,
                 Cost = 23,
                 ProductName = "Johnny Walker Black",
-                Proof = 40m,
+                Proof = 55m,
                 Type = "Scotch"
             };
             context.Whiskeys.Add(johnny);
@@ -62,27 +82,34 @@ namespace AngelShare.Models
 
             context.WhiskeyBoxes.Add(new WhiskeyBox()
             {
-               Whiskey = yamazaki18
+               Whiskey = yamazaki18,
+               Membership = platinum         
             });
             context.WhiskeyBoxes.Add(new WhiskeyBox()
             {
-                Whiskey = bullietRye
+                Whiskey = bullietRye,
+                Membership = silver
             });
             context.WhiskeyBoxes.Add(new WhiskeyBox()
             {
-                Whiskey = jack
+                Whiskey = jack,
+                Membership = silver
+                
             });
             context.WhiskeyBoxes.Add(new WhiskeyBox()
             {
-                Whiskey = tullamoreDew
+                Whiskey = tullamoreDew,
+                Membership = silver
             });
             context.WhiskeyBoxes.Add(new WhiskeyBox()
             {
-                Whiskey = bullietRye
+                Whiskey = bullietRye,
+                Membership = silver
             });
             context.WhiskeyBoxes.Add(new WhiskeyBox()
             {
-                Whiskey = johnny
+                Whiskey = johnny,
+                Membership = gold
             });
 
             context.SaveChanges();

@@ -205,13 +205,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201603261658346_Initial.cs" />
-    <Compile Include="Migrations\201603261658346_Initial.Designer.cs">
-      <DependentUpon>201603261658346_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201603272224001_WhiskeyBox.cs" />
-    <Compile Include="Migrations\201603272224001_WhiskeyBox.Designer.cs">
-      <DependentUpon>201603272224001_WhiskeyBox.cs</DependentUpon>
+    <Compile Include="Migrations\201603280205310_InitialCreate.cs" />
+    <Compile Include="Migrations\201603280205310_InitialCreate.Designer.cs">
+      <DependentUpon>201603280205310_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -324,11 +320,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603261658346_Initial.resx">
-      <DependentUpon>201603261658346_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201603272224001_WhiskeyBox.resx">
-      <DependentUpon>201603272224001_WhiskeyBox.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603280205310_InitialCreate.resx">
+      <DependentUpon>201603280205310_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

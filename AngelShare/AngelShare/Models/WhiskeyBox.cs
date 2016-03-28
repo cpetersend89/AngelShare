@@ -13,10 +13,11 @@ namespace AngelShare.Models
     public class WhiskeyBox 
     {
         public int Id { get; set; }
-        public string MemberShipLevel { get; set; }
-
         public int WhiskeyID { get; set; }
         public virtual Whiskey Whiskey { get; set; }
+
+        public int MembershipID { get; set; }
+        public virtual Membership Membership { get; set; }
        
     }
 }

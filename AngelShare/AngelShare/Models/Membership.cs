@@ -16,6 +16,6 @@ namespace AngelShare.Models
         [Display(Name = "Description")]
         public string MembershipDescription { get; set; }
         [Display(Name = "Price")]
-        public string MembershipPrice { get; set; }
+        public decimal MembershipPrice { get; set; }
     }
 }
